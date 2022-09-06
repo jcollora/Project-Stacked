@@ -1,7 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://modules/textures/testroom.material" type="Material" id=1]
 [ext_resource path="res://modules/Player.tscn" type="PackedScene" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.156863, 0.156863, 0.156863, 1 )
 
 [node name="Spatial" type="Spatial"]
 
@@ -9,11 +11,52 @@
 transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, 0, 0, 0 )
 use_collision = true
 
-[node name="CSGBox" type="CSGBox" parent="CSGCombiner"]
+[node name="Floor" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 5.69871, 0, 0, 0, 1, 0, 0, 0, 5.11411, 0, 0, 0 )
 width = 26.0
 height = 0.5
 depth = 26.0
-material = ExtResource( 1 )
+material = SubResource( 1 )
+
+[node name="Block" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 9.59109, 0, 0, 0, 0.361786, 0, 0, 0, 2, -4.933, 0.726128, 11.032 )
+height = 0.75
+
+[node name="Block2" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1.9821, 0, 0, 0, 0.361786, 0, 0, 0, 1.44442, 32.2187, 0.726128, 11.032 )
+height = 0.75
+
+[node name="Block3" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1.9821, 0, 0, 0, 0.361786, 0, 0, 0, 1.44442, -32.9513, 0.726128, -5.95284 )
+height = 0.75
+
+[node name="Block4" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1.9821, 0, 0, 0, 0.361786, 0, 0, 0, 1.44442, -5.85276, 0.726128, -23.1511 )
+height = 0.75
+
+[node name="Block5" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1.9821, 0, 0, 0, 0.361786, 0, 0, 0, 1.44442, -19.9044, 0.726128, -17.4159 )
+height = 0.75
+
+[node name="Block6" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1.9821, 0, 0, 0, 0.361786, 0, 0, 0, 1.44442, -37.614, 0.726128, 37.6779 )
+height = 0.75
+
+[node name="Block7" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1.9821, 0, 0, 0, 0.361786, 0, 0, 0, 1.44442, -24.7425, 0.726128, 16.3527 )
+height = 0.75
+
+[node name="Block8" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1.9821, 0, 0, 0, 0.361786, 0, 0, 0, 1.44442, -5.39616, 0.726128, 50.5898 )
+height = 0.75
+
+[node name="Block9" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1.9821, 0, 0, 0, 0.361786, 0, 0, 0, 1.44442, 31.3557, 0.726128, 50.5898 )
+height = 0.75
+
+[node name="Block10" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1.9821, 0, 0, 0, 0.361786, 0, 0, 0, 1.44442, 13.0348, 0.726128, 32.4575 )
+height = 0.75
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.5, 0.866025, 0, -0.433013, 0.25, 0.866025, 0.75, -0.433013, 0.5, 0, 5, 0 )
