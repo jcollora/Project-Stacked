@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/bg_music.mp3-75c2ea6716cb2a4d396db3956c0c8b57.mp3str"
+
+[deps]
+
+source_file="res://modules/lance_items/bg_music.mp3"
+dest_files=[ "res://.import/bg_music.mp3-75c2ea6716cb2a4d396db3956c0c8b57.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
