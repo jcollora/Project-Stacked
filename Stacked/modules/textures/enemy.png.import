@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/texture_03.png-663e951ff0ffced9de3bf0926082673c.s3tc.stex"
-path.etc2="res://.import/texture_03.png-663e951ff0ffced9de3bf0926082673c.etc2.stex"
+path.s3tc="res://.import/enemy.png-af534f002f3b8d6ec2aaf5ec25b9149a.s3tc.stex"
+path.etc2="res://.import/enemy.png-af534f002f3b8d6ec2aaf5ec25b9149a.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://modules/textures/leveltest/Dark/texture_03.png"
-dest_files=[ "res://.import/texture_03.png-663e951ff0ffced9de3bf0926082673c.s3tc.stex", "res://.import/texture_03.png-663e951ff0ffced9de3bf0926082673c.etc2.stex" ]
+source_file="res://modules/textures/enemy.png"
+dest_files=[ "res://.import/enemy.png-af534f002f3b8d6ec2aaf5ec25b9149a.s3tc.stex", "res://.import/enemy.png-af534f002f3b8d6ec2aaf5ec25b9149a.etc2.stex" ]
 
 [params]
 
