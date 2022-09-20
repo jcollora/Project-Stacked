@@ -1,5 +1,8 @@
 extends KinematicBody
 
+export var DEBUG_MODE = false
+var debug_ui = preload("res://modules/scenes/DebugUI.tscn")
+
 var fov_base = 90
 var fov_crouch = fov_base - 10
 var fov_sprint = fov_base + 10
@@ -34,6 +37,11 @@ onready var pcap = $CollisionShape
 func _ready():
 	#hides the cursor
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
+	#add debug mode ui if enabled
+	if DEBUG_MODE:
+		var debug_ui_node = debug_ui.instance()
+		add_child(debug_ui_node)
 
 func _input(event):
 	#get mouse input for camera rotation
@@ -103,3 +111,7 @@ func _physics_process(delta):
 	# change fov based on sprint or crouch (use linear interpolation to make fov change look smooth)
 	var fov_interpolated = camera.fov + ((fov_new - camera.fov) * fov_change_speed * delta)
 	camera.fov = clamp(fov_interpolated, 1, 179)
+	
+	# update debug ui if enabled
+	if DEBUG_MODE:
+		$'Debug UI/Panel/SpeedLabel'.text = "Speed: %.2f" % velocity.length()

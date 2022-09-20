@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Stacked"
-run/main_scene="res://modules/TestLevel.tscn"
+run/main_scene="res://modules/scenes/TestLevel.tscn"
 
 [autoload]
 
