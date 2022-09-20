@@ -57,7 +57,7 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 0 ), Vector3( -0.212854, 0, -0.0181919 ), Vector3( 0, 0, 0 ) ]
 }
 tracks/1/type = "audio"
-tracks/1/path = NodePath("gun_audio")
+tracks/1/path = NodePath("AnimationPlayer/gun_audio")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -105,6 +105,7 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0
 visible = false
 layers = 0
 mesh = SubResource( 1 )
+material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
@@ -119,6 +120,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.83887, 0 )
 
 [node name="Camera" type="Camera" parent="Head"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0122651, -2.93861, -0.692987 )
+fov = 90.0
 
 [node name="Hand" type="Spatial" parent="Head/Camera"]
 transform = Transform( -0.0851561, 0, 0.996368, 0, 1, 0, -0.996368, 0, -0.0851561, 0.397153, -0.243448, -0.802937 )
@@ -136,7 +138,7 @@ texture = ExtResource( 5 )
 anims/RESET = SubResource( 4 )
 anims/fire = SubResource( 5 )
 
-[node name="gun_audio" type="AudioStreamPlayer" parent="Head/Camera/Hand"]
+[node name="gun_audio" type="AudioStreamPlayer" parent="Head/Camera/Hand/AnimationPlayer"]
 stream = ExtResource( 6 )
 
 [node name="RayCast" type="RayCast" parent="Head/Camera"]

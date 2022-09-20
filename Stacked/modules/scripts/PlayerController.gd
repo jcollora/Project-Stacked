@@ -1,6 +1,9 @@
 extends KinematicBody
 
-var fov = 90
+var fov_base = 90
+var fov_crouch = fov_base - 10
+var fov_sprint = fov_base + 10
+var fov_change_speed = 12
 
 const ACCEL_DEFAULT = 7
 const ACCEL_AIR = 1
@@ -14,7 +17,7 @@ var snap
 
 var speed = 7
 var jump = 5
-var sprint_multiplier = 3
+var sprint_multiplier = 2
 var crouching_speed = 20
 var crouch_multiplier = 0.6
 var crouch_height = 0.5
@@ -75,17 +78,21 @@ func _physics_process(delta):
 	
 	## crouching
 	var speed_mult = 1
+	var fov_new = fov_base
+	
 	if Input.is_action_pressed("move_crouch") and !Input.is_action_pressed("move_sprint"):
-		pcap.shape.height -= crouching_speed * delta
 		speed_mult = crouch_multiplier
+		fov_new = fov_crouch
+		pcap.shape.height -= crouching_speed * delta
 	else:
 		pcap.shape.height += crouching_speed * delta
 		
 	pcap.shape.height = clamp(pcap.shape.height, crouch_height, default_height)
 	
 	## sprinting
-	if Input.get_action_strength("move_sprint") and Input.get_action_strength("move_forward") and !Input.get_action_strength("move_crouch"):
+	if Input.is_action_pressed("move_sprint") and Input.is_action_pressed("move_forward") and !Input.is_action_pressed("move_crouch"):
 		speed_mult = sprint_multiplier
+		fov_new = fov_sprint
 	
 	## movement calculation
 	var move_multiply = Vector3(1, 1, speed_mult)
@@ -93,6 +100,6 @@ func _physics_process(delta):
 	move_and_slide_with_snap(movement, snap, Vector3.UP)
 	movement = velocity + gravity_vec
 
-	var new_fov = fov * speed_mult
-	var t = 0.75
-	camera.fov = camera.fov * (new_fov - camera.fov) * t
+	# change fov based on sprint or crouch (use linear interpolation to make fov change look smooth)
+	var fov_interpolated = camera.fov + ((fov_new - camera.fov) * fov_change_speed * delta)
+	camera.fov = clamp(fov_interpolated, 1, 179)
