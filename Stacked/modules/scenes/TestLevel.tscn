@@ -92,7 +92,7 @@ material/18 = ExtResource( 5 )
 material/19 = ExtResource( 5 )
 material/20 = ExtResource( 5 )
 material/21 = ExtResource( 5 )
-material/22 = null
+material/22 = ExtResource( 5 )
 
 [node name="StaticBody" type="StaticBody" parent="TestLevel"]
 

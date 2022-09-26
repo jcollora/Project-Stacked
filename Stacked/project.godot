@@ -17,10 +17,6 @@ run/main_scene="res://modules/scenes/TestLevel.tscn"
 
 BgMusic="*res://bg_music.tscn"
 
-[autoload]
-
-BgMusic="*res://bg_music.tscn"
-
 [input]
 
 move_forward={
