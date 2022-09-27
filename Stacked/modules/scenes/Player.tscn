@@ -105,7 +105,6 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0
 visible = false
 layers = 0
 mesh = SubResource( 1 )
-material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
@@ -116,10 +115,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.53941, 0 )
 shape = SubResource( 3 )
 
 [node name="Head" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.83887, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.09558, 0 )
 
 [node name="Camera" type="Camera" parent="Head"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0122651, -2.93861, -0.692987 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0122651, -0.484849, -0.692987 )
 fov = 90.0
 
 [node name="Hand" type="Spatial" parent="Head/Camera"]
@@ -160,3 +159,8 @@ margin_right = 438.0
 margin_bottom = 439.0
 rect_scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 3 )
+
+[node name="Slide_Check" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.41072, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, -1.1 )
