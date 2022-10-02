@@ -111,6 +111,9 @@ DEBUG_MODE = true
 [node name="enemy sphere" parent="Enemies" instance=ExtResource( 2 )]
 transform = Transform( -0.999579, -0.0290208, -8.7386e-08, -0.0290208, 0.999579, -2.53708e-09, 8.74228e-08, 0, -1, 4.78137, 4.86895, 12.5658 )
 
+[node name="enemy sphere5" parent="Enemies" instance=ExtResource( 2 )]
+transform = Transform( -0.999579, -0.0290208, -8.7386e-08, -0.0290208, 0.999579, -2.53708e-09, 8.74228e-08, 0, -1, -2.90918, 0.632855, -1.9998 )
+
 [node name="enemy sphere2" parent="Enemies" instance=ExtResource( 2 )]
 transform = Transform( 0.0806339, 0.615283, -0.784171, -0.0378084, 0.788055, 0.614443, 0.996026, -0.0198966, 0.0868067, -2.79436, 5.47215, 1.17911 )
 

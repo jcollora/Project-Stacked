@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://modules/scripts/PlayerController.gd" type="Script" id=1]
 [ext_resource path="res://modules/scenes/gun.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://modules/scripts/Hand.gd" type="Script" id=4]
 [ext_resource path="res://modules/lance_items/explosion4.png" type="Texture" id=5]
 [ext_resource path="res://modules/lance_items/gun_audio.mp3" type="AudioStream" id=6]
+[ext_resource path="res://modules/scripts/Inventory.gd" type="Script" id=7]
 
 [sub_resource type="CapsuleMesh" id=1]
 mid_height = 3.0
@@ -97,8 +98,11 @@ tracks/3/keys = {
 } ]
 }
 
-[node name="Player" type="KinematicBody"]
+[node name="Player" type="KinematicBody" groups=["Players"]]
 script = ExtResource( 1 )
+
+[node name="Inventory" type="Spatial" parent="."]
+script = ExtResource( 7 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
@@ -116,10 +120,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.53941, 0 )
 shape = SubResource( 3 )
 
 [node name="Head" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.83887, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.09558, 0 )
 
 [node name="Camera" type="Camera" parent="Head"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0122651, -2.93861, -0.692987 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0122651, -0.484849, -0.692987 )
 fov = 90.0
 
 [node name="Hand" type="Spatial" parent="Head/Camera"]
@@ -160,3 +164,8 @@ margin_right = 438.0
 margin_bottom = 439.0
 rect_scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 3 )
+
+[node name="Slide_Check" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.41072, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, -1.1 )
