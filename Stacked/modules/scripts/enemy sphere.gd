@@ -11,7 +11,7 @@ func take_damage(dmg_source, dmg):
 	hp -= dmg
 	if hp <= 0:
 		emit_signal("enemy_killed", dmg_source, self)
-		var coin_pickup_node = coin_pickup.instance()  # Create a coin pickup on death
+		var coin_pickup_node = coin_pickup.instance()    # Create a coin pickup on death
 		coin_pickup_node.gold_value = gold_drop
 		coin_pickup_node.translation = self.translation
 		get_parent().add_child(coin_pickup_node)

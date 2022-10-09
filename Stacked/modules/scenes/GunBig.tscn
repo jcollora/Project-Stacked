@@ -81,7 +81,7 @@ tracks/3/keys = {
 script = ExtResource( 4 )
 
 [node name="GunModel" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform( 0.0268819, 0, 0.0963192, 0, 0.1, 0, -0.0963192, 0, 0.0268819, 0.473627, -0.00916595, -0.109948 )
